@@ -17,7 +17,7 @@
         /* Style the header */
         header {
           background-color: #666;
-          padding: 30px;
+          padding: 50px;
           text-align: center;
           font-size: 35px;
           color: white;
@@ -25,12 +25,13 @@
         
         /* Create two columns/boxes that floats next to each other */
         aside {
-        align-items: center;
+          align-items: center;
           float: left;
           width: 40%;
           height: 300px; /* only for demonstration, should be removed */
           background: #ccc;
-          padding: 20px;
+          padding-top: 100px;
+          padding-left: 160px;
         }
         
         /* Style the list inside the menu */
@@ -43,6 +44,17 @@
           background-color: #f1f1f1;
           height: 300px; /* only for demonstration, should be removed */
         }
+
+        footer {
+          display: table;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 5px;
+          width: 100%;
+          background-color: #754242;
+          height: 50px; /* only for demonstration, should be removed */
+        }
         
         /* Clear floats after the columns */
         section::after {
@@ -52,6 +64,9 @@
         }
 
         h2 {
+            text-align: center;
+        }
+        h3 {
             text-align: center;
         }
         .button {
@@ -65,8 +80,17 @@
             margin: 4px 2px;
             cursor: pointer;
         }
+        label {
+          padding: 150px 50px 50px 130px;
+          text-align: center;
+          font-size: 16px;
+          font-weight: bold;
+        }
 
-        .button1 {background-color: #ebee5c;} /* Green */
+        .button1 {
+          background-color: #666666;
+          align-items: center;
+        } /* Green */
         .button2 {background-color: #ff5100;} /* Blue */
         .button3 {background-color: #3a11ee;} /* Blue */
         .button4 {background-color: #b7dbe7;} /* Blue */
@@ -86,32 +110,43 @@
 
 
     <header>
-        <h2>Weclome to the Game!</h2>
+        <h2>Game of Crypto - ShfitCoin</h2>
     </header>
 
     <section>
         <article>
-            <h2>Game - Phase 1</h2>
-            <h2>Choose Your Character </h2>
-            <p>Knight - Powerful Weapon and Knowlage</p>
-            <p>Magician - Power of Magic</p>
+            <h2>Game Rule</h2>
+            <p>  You will have 500$ in your saving when you start the game. 
+              Your goal is to make decisions with your own money and see 
+              if you can manage your money in a good way so you don't go homeless.
+            </p>
+            <p>
+              This game will weekly Investment game. Every week you have a chances to decide 
+              if you want to invtest your money in Crypto, sell your crypto, or hold your crypto.
+              You can choose to descover other coin as well.
+            </p>
+            <p>
+              Every week you will need 300$ or more in your saving account for you not going homeless.
+              <br>   
+              Random event will occurs in the weekly bases which will cost you money.
+              <br>
+              Every week you will get 500$ for working 6 day part time job.
+            </p>
         </article>
 
 
         <aside>
-          <ul>
-            <button class="button button1">A</button>
-            <br>
-            <button class="button button2">B</button>
-            <br>
-            <button class="button button3">C</button>
-            <br>
-            <button class="button button4">D</button>
-          </ul>
+            <button class="button button1">Start</button>
         </aside>
         
 
-      </section>
+    </section>
+
+    <footer>
+      <label for="your-saving">Your Saving - 500$</label>
+      <label for="current-date">Today's Date is: Feb 15</label>
+      <label for="current-investment">Your Current Investment: 500$</label>
+    </footer>
       
 
     

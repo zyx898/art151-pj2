@@ -4,9 +4,11 @@ window.onload = intialize;
 function intialize(){
     
     setTimeout(function () {
-        sessionStorage.setItem('investment', 50);
         let saving = sessionStorage.getItem('saving');
         let investment = sessionStorage.getItem('investment');
+        if(investment > 100){
+            sessionStorage.setItem('investment', 50);
+        }
         let coinCount = sessionStorage.getItem('coinCount');
         document.getElementById("your-saving").innerHTML = "Your Saving - $"+saving;
         document.getElementById("current-investment").innerHTML = "Your Current Investment - $"+investment;
@@ -70,7 +72,12 @@ function phase3Save(){
         sessionStorage.setItem('investment', investment);
         var coinCount = parseInt(document.getElementById("current-coin").innerHTML.split(": ")[1]);
         sessionStorage.setItem('coinCount', coinCount);
-        window.location.href = "../final/finalPhase.html";
+        if(coinCount > 9999){
+            window.location.href = "../final/finalPhase.html";
+        }else{
+            window.location.href = "../final/normal.html";
+        }
+        
     }, 500);
     
 }
@@ -108,7 +115,7 @@ function phase3Sell(){
         sessionStorage.setItem('saving', saving+investment);
         sessionStorage.setItem('coinCount', 0);
         sessionStorage.setItem('investment', 0);
-        window.location.href = "../final/finalPhase.html";
+        window.location.href = "../final/normal.html";
 
     }, 500);
     
@@ -119,9 +126,12 @@ function displayRule() {
     document.getElementById("title").style = "visible";
     var container = document.getElementById("words");
     displayRuleHelper("One More month passed by, The price of ShiftCoin have slowly decrease to 0.005, It's very cheap");
-    displayRuleHelper("A lots of people are afriad that this Coin might be a scam and people pannic and sell the coin");
-    displayRuleHelper("Your Investment was 400$ now it's worth 40$, Do you still want to hold on to the coin?");
-    displayh4Helper("Do you want to reaserch before you Buy Or Sell the coin? Your Investment is Now 40$");
+    displayRuleHelper("A lots of people are afraid that this Coin might be a scam and people panic and sell the coin");
+    let investment = sessionStorage.getItem('investment');
+        if(investment > 100){
+            displayRuleHelper("Your Investment was 500$ now it's worth 50$, Do you still want to hold on to the coin?");
+        }
+    displayh4Helper("Do you want to research before you Buy Or Sell the coin?");
     displayRuleHelper("Keep in mind always research before you invest in anything.");
     document.getElementById("buyButton").disabled  = true;
     document.getElementById("saveButton").disabled  = true;

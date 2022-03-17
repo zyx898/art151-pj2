@@ -60,6 +60,7 @@ function phase3Save(){
         saving+=200;
         sessionStorage.setItem('saving', saving);
         var investment = document.getElementById("current-investment").innerHTML.split("$")[1];
+        investment = 0;
         sessionStorage.setItem('investment', investment);
         var coinCount = parseInt(document.getElementById("current-coin").innerHTML.split(": ")[1]);
         sessionStorage.setItem('coinCount', coinCount);
@@ -98,10 +99,10 @@ function displayRule() {
     document.getElementById("title").style = "visible";
     var container = document.getElementById("words");
     displayRuleHelper("One Month later, You have been working hard and you save up another 500$ Now you have more money to invest.");
-    displayRuleHelper("A lot have happen over the month, They price of ShiftCoin have dropped down to 0.05 and been consitiancly ");
+    displayRuleHelper("A lot have happen over the month, They price of ShiftCoin have dropped down to 0.05 and been consistently");
     displayRuleHelper("staying at the price of 0.04, 0.05 and 0.06 Today's price is 0.06");
     displayh4Helper("Do you want to Invest in ShiftCoin, or Do some more research and Find other coins.");
-    displayRuleHelper("Keep in mind you need 200$ in your saving incase emergnyce happen.");
+    displayRuleHelper("Keep in mind you need 200$ in your saving in case emergency happen.");
     document.getElementById("buyButton").disabled  = true;
     document.getElementById("saveButton").disabled  = true;
     document.getElementById("buyButton").style.backgroundColor = "Grey";

@@ -61,11 +61,11 @@ function displayh4Helper(string){
 function displayRule() {
     document.getElementById("title").style = "visible";
     var container = document.getElementById("words");
-    displayRuleHelper("You were told by a friend that ShiftCoin is the best cryptocurrency out there in the marktet right now! It will go up to 1$ ");
+    displayRuleHelper("You were told by a friend that ShiftCoin is the best cryptocurrency out there in the market right now! It will go up to 1$");
     displayRuleHelper("really soon, they tell you that you should buy it right now. Right now the price is 0.07 percoin. But you only have 500$ in saving.");
     displayRuleHelper("You need 300$ to cover the rent and food for the week, and you don't get paid till next week.");
     displayh4Helper("BUY 200$ of ShiftCoin Right Now（Risk of Going Homeless and No one know if this Coin has any real value.)");
-    displayRuleHelper("You need the 200$ for emergyce incase something happen. Or You Can Save Your Money wait and See.");
+    displayRuleHelper("You need the 200$ for emergence incase something happens. Or You Can Save Your Money wait and See.");
     document.getElementById("buyButton").disabled  = true;
     document.getElementById("saveButton").disabled  = true;
     document.getElementById("buyButton").style.backgroundColor = "Grey";

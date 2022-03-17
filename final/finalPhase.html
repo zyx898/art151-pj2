@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art 151 Project 2</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        /* Style the header */
+        header {
+          background-color: #666;
+          padding: 50px;
+          text-align: center;
+          font-size: 35px;
+          color: white;
+        }
+        
+        /* Create two columns/boxes that floats next to each other */
+        aside {
+          align-items: center;
+          float: left;
+          width: 40%;
+          height: 300px; /* only for demonstration, should be removed */
+          background: #ccc;
+          padding-top: 100px;
+          padding-left: 100px;
+        }
+        
+        /* Style the list inside the menu */
+
+        
+        article {
+          float: left;
+          padding: 20px;
+          width: 60%;
+          background-color: #f1f1f1;
+          height: 300px; /* only for demonstration, should be removed */
+        }
+
+        footer {
+          display: table;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 5px;
+          width: 100%;
+          background-color: #754242;
+          height: 50px; /* only for demonstration, should be removed */
+        }
+        
+        /* Clear floats after the columns */
+        section::after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        h2 {
+            text-align: center;
+        }
+        h3 {
+            text-align: center;
+        }
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 64px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        label {
+          padding: 150px 50px 50px 130px;
+          text-align: center;
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        .button1 {
+          background-color: #666666;
+          align-items: center;
+        } /* Green */
+        .button2 {background-color: #ff5100;} /* Blue */
+        .button3 {background-color: #3a11ee;} /* Blue */
+        .button4 {background-color: #b7dbe7;} /* Blue */
+
+        
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+          nav, article {
+            width: 100%;
+            height: auto;
+          }
+        }
+        </style>
+</head>
+
+<body>
+
+
+    <header>
+        <h2>Second Week</h2>
+    </header>
+
+    <section>
+        <article>
+            <h2>HomeLess</h2>
+            <p>
+              You spend all your saving investing into the ShiftCoin
+              <br>
+              <h4>Some thing happened You ran out of money, so went homerlesss.</h4>
+            </p>
+            
+        </article>
+
+
+        <aside>
+            <button class="button button1">Buy This ShiftCoin</button>
+            <button class="button button1">Save More Money</button>
+        </aside>
+        
+
+    </section>
+
+    <footer>
+      <label for="your-saving">Your Saving - 0$</label>
+      <label for="current-date">Today's Date is: Feb 20</label>
+      <label for="current-investment">Your Current Investment: 0$</label>
+    </footer>
+      
+
+    
+</body>
+</html>

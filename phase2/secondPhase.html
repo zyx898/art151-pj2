@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art 151 Project 2</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Style the header */
+        header {
+            background-color: #666;
+            padding: 50px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+
+        /* Create two columns/boxes that floats next to each other */
+        aside {
+            display: block;
+            align-items: center;
+            float: left;
+            width: 40%;
+            height: 300px;
+            /* only for demonstration, should be removed */
+            background: #ccc;
+            padding-top: 100px;
+            padding-left: 160px;
+        }
+
+        /* Style the list inside the menu */
+
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 60%;
+            background-color: #f1f1f1;
+            height: 300px;
+            /* only for demonstration, should be removed */
+        }
+
+        footer {
+            display: table;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 5px;
+            width: 100%;
+            background-color: #754242;
+            height: 50px;
+            /* only for demonstration, should be removed */
+        }
+
+        /* Clear floats after the columns */
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 64px;
+            text-align: center;
+            word-wrap: break-word;
+            white-space: initial;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            /* Ensures the content is not revealed until the animation */
+            white-space: nowrap;
+            /* Keeps the content on a single line */
+            width: 0;
+            opacity: 0;
+        }
+
+        .anim-typewriter {
+            animation: type 2.5s steps(44) forwards;
+        }
+
+        /* The typing effect */
+        @keyframes type {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        p:nth-child(2) {
+            animation-delay: 0s;
+        }
+
+        p:nth-child(3) {
+            animation-delay: 2.5s;
+        }
+
+        p:nth-child(4) {
+            animation-delay: 5s;
+        }
+
+        p:nth-child(5) {
+            animation-delay: 7.5s;
+        }
+
+        p:nth-child(6) {
+            animation-delay: 10s;
+        }
+
+        p:nth-child(7) {
+            animation-delay: 12s;
+        }
+
+        label {
+            padding: 150px 50px 50px 130px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .button1 {
+            display:inline-block;
+            background-color: #ff5100;
+            height: 50px;
+            width: 80%;
+            align-items: center;
+            position:static;
+        }
+
+        /* Green */
+        .button2 {
+            background-color: #ff5100;
+        }
+
+        /* Blue */
+        .button3 {
+            background-color: #3a11ee;
+        }
+
+        /* Blue */
+        .button4 {
+            background-color: #b7dbe7;
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="phase2.js"></script>
+
+
+    <header>
+        <h2>Second Week</h2>
+    </header>
+
+    <section>
+        <article id="words">
+            <h2 id="title" style="visibility: hidden">Week 2 </h2>
+
+
+
+
+
+        </article>
+
+
+        <aside>
+            <button class="button button1" id="buyButton" onclick="phase3Invest()" disabled> Investing Now</button>
+            <button class="button button1" id="saveButton" onclick="phase3Save()" disabled>Save Money</button>
+            <button class="button button1" id="researchButton" onclick="displayResearch()" disabled>Do Research</button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Research Result</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Doing Researching Crypto You found some interseting things behind ShiftCoin</p>
+                        <p>Elon Musk is actually the one we behind this coin.</p>
+                        <p>He Will be promte the coin in the near future according to a unknow source</p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+  
+                // Get the button that opens the modal
+                var btn = document.getElementById("researchButton");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal 
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    var saving = parseInt(document.getElementById("your-saving").innerHTML.split("$")[1]);
+                    saving-=100;
+                    document.getElementById("your-saving").innerHTML = "Your Saving - $"+saving;
+                    document.getElementById("researchButton").style.backgroundColor = "Grey";
+                    document.getElementById("researchButton").disabled  = true;
+
+                    modal.style.display = "none";
+                    
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+
+        </aside>
+
+
+    </section>
+
+    <footer>
+        <label for="your-saving" id="your-saving">Your Saving - $700</label>
+        <label for="current-date" >Today's Date is: March 15</label>
+        <label for="current-investment" id="current-investment">Your Current Investment: $0</label>
+        <label for="current-coin"  id="current-coin">Your Current coin: 0</label>
+    </footer>
+
+
+
+</body>
+
+</html>

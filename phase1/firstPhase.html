@@ -88,12 +88,15 @@
     }
 
     .typewriter {
-      overflow: hidden; /* Ensures the content is not revealed until the animation */
-      white-space: nowrap; /* Keeps the content on a single line */
+      overflow: hidden;
+      /* Ensures the content is not revealed until the animation */
+      white-space: nowrap;
+      /* Keeps the content on a single line */
       width: 0;
       opacity: 0;
     }
-    .anim-typewriter{
+
+    .anim-typewriter {
       animation: type 2.5s steps(44) forwards;
     }
 
@@ -102,33 +105,44 @@
       0% {
         opacity: 1;
       }
+
       100% {
         width: 100%;
         opacity: 1;
       }
     }
+
     @keyframes blink {
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
     }
+
     p:nth-child(2) {
       animation-delay: 0s;
     }
+
     p:nth-child(3) {
       animation-delay: 2.5s;
     }
+
     p:nth-child(4) {
       animation-delay: 5s;
     }
+
     p:nth-child(5) {
       animation-delay: 7.5s;
     }
+
     p:nth-child(6) {
       animation-delay: 10s;
+    }
+    p:nth-child(7) {
+      animation-delay: 12s;
     }
 
     label {
@@ -158,6 +172,7 @@
       background-color: #b7dbe7;
     }
 
+
     /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
     @media (max-width: 600px) {
 
@@ -171,31 +186,36 @@
 </head>
 
 <body>
-  <script src="start.js"></script>
+  <script src="phase1.js"></script>
+
 
   <header>
-    <h2>Game of Crypto - ShfitCoin</h2>
+    <h2>First Week</h2>
   </header>
 
   <section>
     <article id="words">
-      <h2 id="ruleTitle" style="visibility: hidden">Game Rule</h2>
+      <h2 id="title" style="visibility: hidden">Intro To ShiftCoin</h2>
+
+      
+
+
+
     </article>
 
 
     <aside>
-      <button id="startButton" class="button button1" onclick="intialize() ">Start</button>
+      <button class="button button1" id="buyButton" onclick="homeless()"disabled>Buy This ShiftCoin</button>
+      <button class="button button1" id="saveButton" onclick="phase2()" disabled>Save More Money</button>
     </aside>
 
 
   </section>
 
   <footer>
-    <label for="your-saving">Your Saving - 0$</label>
+    <label for="your-saving">Your Saving - 500$</label>
     <label for="current-date">Today's Date is: Feb 15</label>
     <label for="current-investment">Your Current Investment: 0$</label>
-    <label for="current-coin"  id="current-coin">Your Current coin: 0</label>
-
   </footer>
 
 
